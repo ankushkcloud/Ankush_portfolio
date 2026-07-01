@@ -1,0 +1,103 @@
+.contact__card {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(47, 111, 237, 0.2), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    var(--card);
+  border: 1px solid rgba(91, 155, 255, 0.18);
+  border-radius: 26px;
+  padding: 76px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 34px 90px -54px rgba(47, 111, 237, 0.65);
+}
+
+.contact__card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.035);
+  pointer-events: none;
+}
+
+.contact__glow {
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(47, 111, 237, 0.22), transparent 68%);
+  top: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  animation: contactPulse 8s ease-in-out infinite alternate;
+}
+
+.contact__card .eyebrow {
+  justify-content: center;
+}
+
+.contact__heading {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.5vw, 50px);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact__sub {
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto 38px;
+  line-height: 1.8;
+  position: relative;
+}
+
+.contact__actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.contact__links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted-dim);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.contact__links a {
+  position: relative;
+}
+
+.contact__links a:hover {
+  color: var(--blue-light);
+}
+
+@keyframes contactPulse {
+  to {
+    transform: translateX(-50%) scale(1.08);
+    opacity: 0.82;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact__card {
+    padding: 52px 20px;
+    border-radius: 20px;
+  }
+
+  .contact__actions .btn {
+    width: 100%;
+  }
+}

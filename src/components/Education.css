@@ -1,0 +1,128 @@
+.edu__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 34px;
+}
+
+.edu__block {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.025)), var(--card);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 32px;
+  height: 100%;
+  backdrop-filter: blur(16px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu__block:hover {
+  transform: translateY(-5px);
+  border-color: rgba(91, 155, 255, 0.34);
+  box-shadow: 0 24px 50px -34px rgba(47, 111, 237, 0.7);
+}
+
+.edu__block-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(91, 155, 255, 0.12);
+}
+
+.edu__block-title--spaced {
+  margin-top: 30px;
+}
+
+.edu-item {
+  margin-bottom: 24px;
+}
+
+.edu-item:last-child {
+  margin-bottom: 0;
+}
+
+.edu-item__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.edu-item h4 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.edu-item__field {
+  color: var(--blue-light);
+  font-size: 13.5px;
+  margin-top: 5px;
+}
+
+.edu-item__school {
+  color: var(--muted);
+  font-size: 13.5px;
+  margin-top: 5px;
+}
+
+.cert-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.cert-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.cert-item__icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.cert-item h4 {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.lang-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lang-pill {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  border: 1px solid rgba(91, 155, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+@media (max-width: 780px) {
+  .edu__grid {
+    grid-template-columns: 1fr;
+  }
+}

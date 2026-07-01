@@ -1,0 +1,129 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 26px;
+}
+
+.timeline__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline__dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--blue);
+  margin-top: 28px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.timeline__item--current .timeline__dot {
+  background: var(--cyan);
+  box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.14), 0 0 24px rgba(56, 189, 248, 0.55);
+}
+
+.timeline__line {
+  width: 1px;
+  flex: 1;
+  background: linear-gradient(rgba(91, 155, 255, 0.42), rgba(91, 155, 255, 0.02));
+  margin-top: 7px;
+}
+
+.timeline__content {
+  margin-bottom: 14px;
+  padding: 24px;
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)), var(--card);
+  backdrop-filter: blur(16px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline__content:hover {
+  transform: translateY(-4px);
+  border-color: rgba(91, 155, 255, 0.34);
+  box-shadow: 0 24px 50px -34px rgba(47, 111, 237, 0.75);
+}
+
+.timeline__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+.timeline__head h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.timeline__badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cyan);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(56, 189, 248, 0.06);
+}
+
+.timeline__company {
+  color: var(--blue-light);
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.timeline__period {
+  margin-bottom: 12px;
+}
+
+.timeline__points {
+  display: grid;
+  gap: 10px;
+  max-width: 760px;
+}
+
+.timeline__points li {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.7;
+  padding-left: 20px;
+  position: relative;
+}
+
+.timeline__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 7px;
+  height: 1px;
+  background: var(--blue-light);
+  box-shadow: 0 0 12px rgba(91, 155, 255, 0.6);
+}
+
+@media (max-width: 640px) {
+  .timeline__item {
+    grid-template-columns: 18px 1fr;
+    gap: 14px;
+  }
+
+  .timeline__content {
+    padding: 22px 18px;
+  }
+}

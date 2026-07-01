@@ -1,0 +1,213 @@
+:root {
+  --bg: #08111f;
+  --bg-alt: #0d1a2d;
+  --card: rgba(20, 33, 54, 0.74);
+  --card-hover: rgba(27, 44, 72, 0.86);
+  --border: #263a5a;
+  --border-soft: rgba(122, 174, 255, 0.18);
+  --blue: #2f6fed;
+  --blue-light: #5b9bff;
+  --cyan: #38bdf8;
+  --white: #f7f9ff;
+  --muted: #aebbd0;
+  --muted-dim: #7f8ea6;
+  --green: #3ddc97;
+
+  --font-display: "Geist", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --container: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 980px 620px at 12% -10%, rgba(73, 138, 255, 0.24), transparent 62%),
+    radial-gradient(ellipse 820px 560px at 98% 12%, rgba(56, 189, 248, 0.17), transparent 62%),
+    radial-gradient(ellipse 760px 500px at 52% 100%, rgba(47, 111, 237, 0.16), transparent 68%),
+    var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background-image:
+    linear-gradient(rgba(122, 174, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(122, 174, 255, 0.055) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 82%);
+}
+
+body::after {
+  background:
+    radial-gradient(circle at 22% 34%, rgba(122, 174, 255, 0.1), transparent 24%),
+    radial-gradient(circle at 76% 58%, rgba(56, 189, 248, 0.09), transparent 22%);
+  animation: globalGlow 16s ease-in-out infinite alternate;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(47, 111, 237, 0.35);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  position: relative;
+  padding: 36px 0;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--cyan);
+  display: inline-block;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.7);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.section-sub {
+  color: var(--muted);
+  max-width: 660px;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted-dim);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@keyframes globalGlow {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: translate3d(0, -28px, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 32px 0;
+  }
+
+  .container {
+    padding-inline: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

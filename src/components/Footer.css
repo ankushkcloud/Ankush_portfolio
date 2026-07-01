@@ -1,0 +1,13 @@
+.footer {
+  padding: 34px 0;
+  border-top: 1px solid rgba(91, 155, 255, 0.12);
+  background: rgba(5, 7, 13, 0.36);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted-dim);
+  flex-wrap: wrap;
+  gap: 12px;
+}
